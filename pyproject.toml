@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml-evaluation-toolkit"
+version = "0.1.0"
+description = "Machine-learning evaluation toolkit: classification metrics, error analysis, calibration and regression evaluation over saved predictions."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Sherif Olabode" }]
+keywords = ["machine-learning", "evaluation", "classification", "calibration", "error-analysis", "metrics"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.26,<3",
+    "pandas>=2.2,<4",
+    "scikit-learn>=1.5,<1.7",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+mleval = "ml_evaluation_toolkit.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Sharif899/ml-evaluation-toolkit"
+Repository = "https://github.com/Sharif899/ml-evaluation-toolkit"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
